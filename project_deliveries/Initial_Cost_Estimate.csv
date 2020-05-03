@@ -1,0 +1,18 @@
+Group hierarchy;Region;Service;Upfront;Monthly;First 12 months total;Currency;Configuration summary
+My Estimate;US East (N. Virginia);Amazon Virtual Private Cloud (VPC);0; $35,1 ;421,2;USD;Number of NAT Gateways (1)
+My Estimate;US East (N. Virginia);Elastic Load Balancing;0; $7.624,85 ;91498.20;USD;Number of Application Load Balancers (2)
+My Estimate;US East (N. Virginia);Amazon EC2;0; $374,48 ;4493.76;USD;Operating system (Linux), Quantity (10), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (100 GB), Instance type (t3a.medium)
+My Estimate;US East (N. Virginia);Amazon EC2;0; $472,30 ;5667.60;USD;Operating system (Linux), Quantity (10), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (100 GB), Instance type (a1.large)
+My Estimate;US East (N. Virginia);S3 Standard;0; $9,38 ;112.56;USD;S3 Standard storage (300 GB per month)
+My Estimate;US East (N. Virginia);S3 One Zone - Infrequent Access;0; $10,15 ;121.81;USD;S3 One Zone-IA storage (300 GB per month)
+My Estimate;US East (N. Virginia);S3 Glacier;0; $1,46 ;17.52;USD;S3 Glacier storage (300 GB per month)
+My Estimate;US East (N. Virginia);Data Transfer;0; $92,07 ;1104.84;USD;Data Transfer, Data transfer cost (92.07)
+My Estimate;US East (N. Virginia);Amazon CloudWatch;0; $47,13 ;5655.15;USD;
+My Estimate;US East (N. Virginia);Amazon Elastic IP;0; $7,30 ;87.60;USD;Number of EC2 instances (2), Number of EIPs per instance (2)
+My Estimate;US East (N. Virginia);Amazon Route 53;0; $0,50 ;6.00;USD;Hosted Zones (1)
+My Estimate;US East (N. Virginia);Amazon RDS for PostgreSQL;0; $543,62 ;6523.49;USD;Quantity (1), Storage volume (General Purpose SSD (gp2)), Storage amount (1 TB per month), Instance type (db.r5.large), Additional backup storage (1 TB)
+;;;;;;;
+;;;Total; $9.253,44 ;;;
+;;;;;;;
+"Comments:
+Unfortunately the AWS Pricing Calculator does not contemplates the CloudFront pricing, which would add some more costs, disregarding the free tier.";;;;;;;

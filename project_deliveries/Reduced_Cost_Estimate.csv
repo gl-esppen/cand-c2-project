@@ -1,0 +1,22 @@
+Group hierarchy;Region;Service;Upfront;Monthly;First 12 months total;Currency;Configuration summary
+My Estimate;US East (N. Virginia);Amazon Virtual Private Cloud (VPC);0; $35,1 ;421,2;USD;Number of NAT Gateways (1)
+My Estimate;US East (N. Virginia);Elastic Load Balancing;0; $4.120,85 ;49450.20;USD;Number of Application Load Balancers (2)
+My Estimate;US East (N. Virginia);Amazon EC2;0; $272,28 ;3267.36;USD;Operating system (Linux), Quantity (10), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (100 GB), Instance type (t3a.medium)
+My Estimate;US East (N. Virginia);Amazon EC2;0; $334,33 ;4011.96;USD;Operating system (Linux), Quantity (10), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (100 GB), Instance type (a1.large)
+My Estimate;US East (N. Virginia);S3 Standard;0; $9,38 ;112.56;USD;S3 Standard storage (300 GB per month)
+My Estimate;US East (N. Virginia);S3 One Zone - Infrequent Access;0; $10,15 ;121.81;USD;S3 One Zone-IA storage (300 GB per month)
+My Estimate;US East (N. Virginia);S3 Glacier;0; $1,46 ;17.52;USD;S3 Glacier storage (300 GB per month)
+My Estimate;US East (N. Virginia);Data Transfer;0; $92,07 ;1104.84;USD;Data Transfer, Data transfer cost (92.07)
+My Estimate;US East (N. Virginia);Amazon CloudWatch;0; $471,26 ;5655.15;USD;
+My Estimate;US East (N. Virginia);Amazon Elastic IP;0; $7,30 ;87.60;USD;Number of EC2 instances (2), Number of EIPs per instance (2)
+My Estimate;US East (N. Virginia);Amazon Route 53;0; $0,50 ;6.00;USD;Hosted Zones (1)
+My Estimate;US East (N. Virginia);Amazon RDS for PostgreSQL;0; $493,84 ;5926.13;USD;Quantity (1), Storage volume (General Purpose SSD (gp2)), Storage amount (1 TB per month), Instance type (db.r5.large), Additional backup storage (500 GB)
+;;;;;;;
+;;;Total; $5.883,63 ;;;
+;;;;;;;
+"Comments:
+The EC2 instances costs types were changed to Standard Reserved. In the previous estimation these instances were ""On-demand"", since the application is new and we don't know very accurately how is going to behavior.
+The RDS additional backup were decreased to 500 GB per month. This won't affect the application, the idea in the previous estimation were to keep a confortable size.
+Some metrics at CloudWatch were removed, but won't affect how the application is monitored. The number of dashboards and metrics API requests were decreased a little, but it still having alarms for critical metrics.
+The Aplication Load Balancer had the ""Processed bytes (EC2 Instances and IP addresses as targets)"" reduced by almost half, and this won't affect the application running. The previous values were highly estimated because they were based on some social media data. Ex: Using the ""Inspect"" in the browser and accessing Facebook, it takes approximately 13MB of data processed.
+Unfortunately the AWS Pricing Calculator does not contemplates the CloudFront pricing, which would add some more costs, disregarding the free tier.";;;;;;;

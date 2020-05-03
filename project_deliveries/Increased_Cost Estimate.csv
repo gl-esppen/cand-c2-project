@@ -1,0 +1,45 @@
+Group hierarchy;Region;Service;Upfront;Monthly;First 12 months total;Currency;Configuration summary
+My Estimate;US East (N. Virginia);Amazon Virtual Private Cloud (VPC);0; $35,10 ;421,2;USD;Number of NAT Gateways (1)
+My Estimate;US East (N. Virginia);Elastic Load Balancing;0; $4.120,85 ;49450.20;USD;Number of Application Load Balancers (2)
+My Estimate;US East (N. Virginia);Amazon EC2;0; $988,40 ;11860.80;USD;Operating system (Linux), Quantity (20), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (100 GB), Instance type (m5a.large)
+My Estimate;US East (N. Virginia);Amazon EC2;0; $1.557,08 ;18684.96;USD;Operating system (Linux), Quantity (15), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (100 GB), Instance type (a1.2xlarge)
+My Estimate;US East (N. Virginia);S3 Standard;0; $9,38 ;112.56;USD;S3 Standard storage (300 GB per month)
+My Estimate;US East (N. Virginia);S3 One Zone - Infrequent Access;0; $10,15 ;121.81;USD;S3 One Zone-IA storage (300 GB per month)
+My Estimate;US East (N. Virginia);S3 Glacier;0; $1,46 ;17.52;USD;S3 Glacier storage (300 GB per month)
+My Estimate;US East (N. Virginia);Data Transfer;0; $92,07 ;1104.84;USD;Data Transfer, Data transfer cost (92.07)
+My Estimate;US East (N. Virginia);Amazon CloudWatch;0; $471,26 ;5655.15;USD;
+My Estimate;US East (N. Virginia);Amazon Elastic IP;0; $7,30 ;87.60;USD;Number of EC2 instances (2), Number of EIPs per instance (2)
+My Estimate;US East (N. Virginia);Amazon Route 53;0; $141,25 ;1695.00;USD;Hosted Zones (1), Basic Checks Within AWS (3)
+My Estimate;US East (N. Virginia);Amazon RDS for PostgreSQL;0; $1.411,47 ;16937.64;USD;Quantity (2), Storage volume (General Purpose SSD (gp2)), Storage amount (1 TB per month), Instance type (db.r5.xlarge), Additional backup storage (1 TB)
+My Estimate;US West (Oregon);S3 Standard;0; $9,38 ;112.56;USD;S3 Standard storage (300 GB per month)
+My Estimate;US West (Oregon);S3 One Zone - Infrequent Access;0; $10,15 ;121.81;USD;S3 One Zone-IA storage (300 GB per month)
+My Estimate;US West (Oregon);S3 Glacier;0; $1,46 ;17.52;USD;S3 Glacier storage (300 GB per month)
+My Estimate;US West (Oregon);Data Transfer;0; $92,07 ;1104.84;USD;Data Transfer, Data transfer cost (92.07)
+My Estimate;US West (Oregon);Amazon RDS for PostgreSQL;0; $1.411,47 ;16937.64;USD;Quantity (2), Storage volume (General Purpose SSD (gp2)), Storage amount (1 TB per month), Instance type (db.r5.xlarge), Additional backup storage (1 TB)
+My Estimate;US East (N. Virginia);AWS Web Application Firewall (WAF);0; $935,00 ;11220.00;USD;Number of Web Access Control Lists (Web ACLs) utilized (5 per month), Number of Rules added per Web ACL (10 per month)
+My Estimate;US West (Oregon);Amazon Route 53;0; $141,25 ;1695.00;USD;Hosted Zones (1), Basic Checks Within AWS (3)
+My Estimate;US West (Oregon);Amazon EC2;0; $988,40 ;11860.80;USD;Operating system (Linux), Quantity (20), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (100 GB), Instance type (m5a.large)
+My Estimate;US West (Oregon);Amazon EC2;0; $1.557,08 ;18684.96;USD;Operating system (Linux), Quantity (15), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (100 GB), Instance type (a1.2xlarge)
+My Estimate;South America (Sao Paulo);S3 Standard;0; $16,95 ;203.40;USD;S3 Standard storage (300 GB per month)
+My Estimate;South America (Sao Paulo);S3 One Zone - Infrequent Access;0; $1,40 ;167.89;USD;S3 One Zone-IA storage (300 GB per month)
+My Estimate;South America (Sao Paulo);S3 Glacier;0; $2,91 ;34.92;USD;S3 Glacier storage (300 GB per month)
+My Estimate;South America (Sao Paulo);Data Transfer;0; $92,07 ;1104.84;USD;Data Transfer, Data transfer cost (92.07)
+My Estimate;US West (Oregon);Elastic Load Balancing;0; $4.120,85 ;49450.20;USD;Number of Application Load Balancers (2)
+My Estimate;US West (Oregon);AWS Lambda;0; $0,23 ;2.76;USD;Number of requests (100000), Concurrency (1000), Number of requests for Provisioned Concurrency (1000)
+My Estimate;US West (Oregon);Amazon CloudWatch;0; $471,26 ;5655.15;USD;
+My Estimate;US West (Oregon);Amazon Virtual Private Cloud (VPC);0; $35,10 ;421,2;USD;Number of NAT Gateways (1)
+My Estimate;US West (Oregon);Amazon Elastic IP;0; $7,30 ;87.60;USD;Number of EC2 instances (2), Number of EIPs per instance (2)
+My Estimate;US East (N. Virginia);AWS Lambda;0; $0,23 ;2.76;USD;Number of requests (100000), Concurrency (1000), Number of requests for Provisioned Concurrency (1000)
+My Estimate;US West (Oregon);Amazon Simple Notification Service (SNS);0; $20,50 ;246.00;USD;Data Transfer, Requests (1 million per month)
+My Estimate;EU (Frankfurt);Amazon RDS for PostgreSQL;0; $540,31 ;6483.76;USD;Quantity (1), Storage volume (General Purpose SSD (gp2)), Storage amount (1 TB per month), Instance type (db.r5.xlarge), Additional backup storage (1 TB)
+;;;;;;;
+;;;Total; $19.371,35 ;;;
+;;;;;;;
+"Comments:
+With a higher budget it was possible to include some AWS resources that would improve the performance and the security of the application.
+All the infrastructure were replicated to another region, and the Route 53 configured to make a traffic balance of the DNS requests. With this, we can even more distribute the workload between the two regions and don't overload the load balancers and servers.
+In order to handle more requests, the server application were upgraded to a m5.large and the web servers to a a1.2xlarge.
+The S3 files and RDS data were also replicated to another region (Frankfurt) to cover the possibility of a disaster at the US Region and loss of data.
+A WAF resource was included in the estimate to enable protection to the CloudFront and Load Balancer resources.
+SNS was also included to provide more proactivity monitoring of the application, allowing alarms notifications being sent to the team by slack, e-mail, SMS and so on.
+To increase even more performance to CloudFront render static files for users, a Lambda@Edge were included permiting faster content delivery to the users.";;;;;;;
